@@ -35,4 +35,9 @@ jobs:
           sudo chmod -R a=u .
           # Work around https://github.com/actions/checkout/issues/766
           git config --global --add safe.directory "*"
+          echo '::group::install'
           opam install -y -v ${{ matrix.env.OPAM_DEPS }}
+          echo '::endgroup::'
+          echo '::group::find .coq-native'
+          find ~/.opam -name .coq-native
+          echo '::endgroup::'
