@@ -1,4 +1,4 @@
-name: CI (only native-compute targets)
+name: CI
 
 on:
   push:
